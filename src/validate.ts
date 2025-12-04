@@ -1,5 +1,5 @@
-import { log } from "console";
-import { apiRoot } from "./handson/client";
+import { log } from "../utils/logger";
+import { apiRoot } from "./client";
 import { Attribute } from "@commercetools/platform-sdk";
 
 async function checkProductFeedReadiness(storeKey: string) {
@@ -46,5 +46,5 @@ async function checkProductFeedReadiness(storeKey: string) {
 checkProductFeedReadiness('main-online-store-us').then(() => {
   log('Product feed readiness check completed.');
 }).catch((error) => {
-  log('Error during product feed readiness check:', error);
+  log(error);
 });

@@ -4,7 +4,7 @@
   "description": "Used in commercetools AC Training for Validating Data with TypeScript SDK",
   "main": "index.js",
   "scripts": {
-    "validate": "ts-node validate.ts"
+    "validate": "ts-node src/validate.ts"
   },
   "keywords": [
     "commercetools",

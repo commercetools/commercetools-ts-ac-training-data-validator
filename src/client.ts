@@ -5,7 +5,7 @@ import {
     HttpMiddlewareOptions
 } from "@commercetools/sdk-client-v2";
 import { ApiRoot} from "../types/global";
-import { Config, readConfig } from "../utils/config";
+import { readConfig } from "../utils/config";
 
 const createApiClient = () => {
     const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig();
