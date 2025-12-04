@@ -1,22 +1,10 @@
 {
-  "name": "commercetools-ts-sdk-training",
+  "name": "commercetools-ts-ac-training-data-validator",
   "version": "1.0.0",
-  "description": "Used in commercetools JavaScript Developer Training",
+  "description": "Used in commercetools AC Training for Validating Data with TypeScript SDK",
   "main": "index.js",
   "scripts": {
-    "1": "ts-node Task01_project_setup.ts",
-    "2": "ts-node Task02_customers.ts",
-    "3": "ts-node Task03_import_sync_products.ts",
-    "4a": "ts-node Task04a_states.ts",
-    "4b": "ts-node Task04b_checkout.ts",
-    "4c": "ts-node Task04c_merging.ts",
-    "5a": "ts-node Task05a_stores.ts",
-    "5b": "ts-node Task05b_product_selections.ts",
-    "6a": "ts-node Task06a_search.ts",
-    "6b": "ts-node Task06b_pagination.ts",
-    "6c": "ts-node Task06c_graphql.ts",
-    "7a": "ts-node Task07a_custom_types.ts",
-    "7b": "ts-node Task07b_custom_objects.ts"
+    "validate": "ts-node validate.ts"
   },
   "keywords": [
     "commercetools",
@@ -27,7 +15,6 @@
   "author": "commercetools Training",
   "license": "MIT",
   "dependencies": {
-    "@commercetools/importapi-sdk": "^5.14.0",
     "@commercetools/platform-sdk": "^7.19.0",
     "chalk-animation": "1.6.0",
     "cli-highlight": "^2.1.11",

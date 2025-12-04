@@ -2,20 +2,13 @@ import { config } from "dotenv";
 
 config();
 
-export const enum Prefix {
-  DEV = "DEV",
-  IMPORT = "IMPORT",
-  STORE = "STORE",
-  AWS = "AWS",
-}
-
-export const readConfig = (prefix: string) => {
+export const readConfig = () => {
   return {
-    clientId: process.env[prefix + "_CLIENT_ID"] || "",
-    clientSecret: process.env[prefix + "_CLIENT_SECRET"] || "",
-    projectKey: process.env[prefix + "_PROJECT_KEY"] || "",
-    oauthHost: process.env[prefix + "_AUTH_URL"] || "",
-    host: process.env[prefix + "_API_URL"] || "",
+    clientId: process.env["CTP_CLIENT_ID"] || "",
+    clientSecret: process.env["CTP_CLIENT_SECRET"] || "",
+    projectKey: process.env["CTP_PROJECT_KEY"] || "",
+    oauthHost: process.env["CTP_AUTH_URL"] || "",
+    host: process.env["CTP_API_URL"] || "",
   };
 };
 

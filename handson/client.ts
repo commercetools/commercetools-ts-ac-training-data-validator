@@ -1,25 +1,36 @@
-import { createApiBuilderFromCtpClient as createImportApiBuilderFromCtpClient } from "@commercetools/importapi-sdk";
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 import {
     AuthMiddlewareOptions,
     ClientBuilder,
     HttpMiddlewareOptions
 } from "@commercetools/sdk-client-v2";
-import { ApiRoot, ImportApiRoot } from "../types/global";
-import { Prefix, Config, readConfig } from "../utils/config";
+import { ApiRoot} from "../types/global";
+import { Config, readConfig } from "../utils/config";
 
 const createApiClient = () => {
-    throw new Error("Function not implemented");
-};
+    const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig();
 
-const createImportApiClient = () => {
-    throw new Error("Function not implemented");
-};
+    const authMiddlewareOptions: AuthMiddlewareOptions = {
+        credentials: {
+            clientId,
+            clientSecret,
+        },
+        host: oauthHost,
+        projectKey,
+        fetch,
+    };
 
-const createStoreApiClient = () => {
-    throw new Error("Function not implemented");
+    const httpMiddlewareOptions: HttpMiddlewareOptions = {
+        host,
+        fetch,
+    };
+
+    const client = new ClientBuilder()
+        .withClientCredentialsFlow(authMiddlewareOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .build();
+
+    return createApiBuilderFromCtpClient(client).withProjectKey({ projectKey });
 };
 
 export const apiRoot: ApiRoot = createApiClient();
-// export const importApiRoot: ImportApiRoot = createImportApiClient();
-// export const storeApiRoot: ApiRoot = createStoreApiClient();
