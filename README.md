@@ -1,7 +1,6 @@
 # commercetools-ts-ac-training-data-validator
 
 commercetools-ts-ac-training-data-validator
-ools-ts-sdk-training
 
 ## Usage
 

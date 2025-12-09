@@ -2,7 +2,7 @@ import { log } from "../utils/logger";
 import { apiRoot } from "./client";
 import { Attribute } from "@commercetools/platform-sdk";
 
-async function checkProductFeedReadiness(storeKey: string) {
+async function checkProductFeedReadiness() {
   const requiredAttributes = ['chatgptEnableSearch', 'chatgptEnableCheckout', 'brand', 'material', 'weight']; // Add attributes as per your business requirement
   const productsResponse  = await apiRoot
     .products()
@@ -43,7 +43,7 @@ async function checkProductFeedReadiness(storeKey: string) {
   }
 }
 
-checkProductFeedReadiness('main-online-store-us').then(() => {
+checkProductFeedReadiness().then(() => {
   log('Product feed readiness check completed.');
 }).catch((error) => {
   log(error);

@@ -1,7 +1,7 @@
 {
   "name": "commercetools-ts-ac-training-data-validator",
   "version": "1.0.0",
-  "description": "Used in commercetools AC Training for Validating Data with TypeScript SDK",
+  "description": "Used in commercetools Agentic Commerce Training for Validating Data with TypeScript SDK",
   "main": "index.js",
   "scripts": {
     "validate": "ts-node src/validate.ts"
